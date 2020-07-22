@@ -1,2 +1,2 @@
 # twitoff
-Forked from Lambda School
+A Flask web application for comparing Twitter users
