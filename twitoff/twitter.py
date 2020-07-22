@@ -46,12 +46,10 @@ def add_or_update_user(username):
     else:
         DB.session.commit()
 
-
 def add_users(users=TWITTER_USERS):
     """Add/update a list of users."""
     for user in users:
         add_or_update_user(user)
-
 
 def update_all_users():
     """Update all existing users."""

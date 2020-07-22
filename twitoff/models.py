@@ -3,7 +3,6 @@ from flask_sqlalchemy import SQLAlchemy
 
 DB = SQLAlchemy()
 
-
 class User(DB.Model):
     """Twitter users."""
     id = DB.Column(DB.BigInteger, primary_key=True)
