@@ -59,7 +59,6 @@ def update_all_users():
     for user in User.query.all():
         add_or_update_user(user.name)
 
-
 def add_test_users():
     for i, name in enumerate(TWITTER_USERS):
         user = User(id=i, name=name)

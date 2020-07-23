@@ -4,9 +4,8 @@ from sklearn.linear_model import LogisticRegression
 from .models import User
 from .twitter import BASILICA
 
-
 def predict_user(user1_name, user2_name, tweet_text):
-    """Determine and returns which user is more likely to say a given Tweet."""
+    """Determine and returns which user is more likely to Tweet some text"""
     user1 = User.query.filter(User.name == user1_name).one()
     user2 = User.query.filter(User.name == user2_name).one()
     user1_embeddings = np.array([tweet.embedding for tweet in user1.tweets])
