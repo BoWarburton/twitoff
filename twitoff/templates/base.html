@@ -6,7 +6,7 @@
   </head>
   <body>
     <nav>
-      <a href="/" class="brand"><span>Home</span></a>
+        <a href="/" class="brand"><span>Bo's App visited {{ counter }} times</span></a>
 
       <!-- responsive-->
       <input id="bmenub" type="checkbox" class="show">
@@ -30,6 +30,7 @@
             <option value="{{ user.name }}">{{ user.name }}</option>
             {% endfor %}
           </select>
+
           <select name="user2">
             {% for user in users %}
             <option value="{{ user.name }}">{{ user.name }}</option>
