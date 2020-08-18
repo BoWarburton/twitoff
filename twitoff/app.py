@@ -19,8 +19,6 @@ def create_app():
     @app.route('/')
     def root():
         # A route can return a string or a template (which returns a string)
-        # return f'Hello, Twitoff user {new_num}'
-        # Todo: persistent user counter (visits, shows "You are user number")
         visits = Visit.query.one()
         visits.num_visits += 1
         DB.session.commit()
@@ -38,7 +36,6 @@ def create_app():
     def view_users():
         users = User.query.all()
         return '\n'.join([str(user) for user in users])
-        # return str(User.query.all())
 
     @app.route('/user', methods=['POST'])
     @app.route('/user/<name>', methods=['GET'])

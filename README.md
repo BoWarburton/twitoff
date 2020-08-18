@@ -1,3 +1,13 @@
 # twitoff
 A Flask web application for comparing Twitter users
-This is code from 2nd time through
+
+Links for routes
+http://127.0.0.1:5000/
+
+http://127.0.0.1:5000/user
+
+http://127.0.0.1:5000/addtestusers
+
+http://127.0.0.1:5000/compare
+
+http://127.0.0.1:5000/reset
