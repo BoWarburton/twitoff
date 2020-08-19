@@ -17,6 +17,7 @@
         <a href="/add_test_users" class="button warning">Add test users</a>
         <a href="/view_test_users" class="button warning">View test users</a>
         <a href="/reset" class="button error">Reset Database</a>
+        <a href="/random" class="button warning">Random number</a>
       </div>
     </nav>
 
@@ -26,12 +27,14 @@
         <h1>{{ title }}</h1>
         <form action="/compare" method="post">
           <select name="user1">
+            <option selected disabled hidden>Choose first user</option>
             {% for user in users %}
             <option value="{{ user.name }}">{{ user.name }}</option>
             {% endfor %}
           </select>
 
           <select name="user2">
+            <option selected disabled hidden>Choose second user</option>
             {% for user in users %}
             <option value="{{ user.name }}">{{ user.name }}</option>
             {% endfor %}
@@ -50,7 +53,7 @@
         <a href="/user/{{ user.name }}"><span class="stack">{{ user.name }}</span></a>
         {% endfor %}
         <form action="/user" method="post">
-          <input type="text" name="user_name" placeholder="User to add">
+          <input type="text" name="user_name" placeholder="Twitter user (without @)">
           <input type="submit" value="Add User">
         </form>
       </div>

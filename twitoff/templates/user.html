@@ -1,11 +1,11 @@
-{% extends "base.html" %}
+{% extends "base.html" %} <!-- reuses base.html but replaces content block with: -->
 {% block content %}
 <div id="user-info">
   <h2>{{ title }}</h2>
   <p>{{ message }}</p>
 </div>
 <div id="user-tweets">
-  {% for tweet in tweets %}
+  {% for tweet in tweets %} <!-- template logic -->
   <span class="stack">{{ tweet.text }}</span>
   {% endfor %}
 </div>
