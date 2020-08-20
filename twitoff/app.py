@@ -4,14 +4,15 @@ from os import getenv
 from flask import Flask, render_template, request, jsonify
 from .models import DB, User, Visit
 from .predict import predict_user
-from .twitter import add_or_update_user, add_users, update_all_users  # insert_test_users
+from .twitter import add_or_update_user, add_users, update_all_users
+# insert_test_users
 import random
 
 
 def create_app():
     """Create and configure an instance of the Flask application."""
     app = Flask(__name__)
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
+    app.config['SQLALCHEMY_DATABASE_URI'] = getenv('DATABASE_URL')  # 'sqlite:///db.sqlite3'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     # app.config['SQLALCHEMY_DATABASE_URI'] = getenv('DATABASE_URL')
     DB.init_app(app)
